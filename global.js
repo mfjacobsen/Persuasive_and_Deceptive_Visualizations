@@ -7,6 +7,10 @@ function loadPlot(divId, filePath) {
             return response.json();
         })
         .then(fig => {
+            if (fig.layout) {
+                delete fig.layout.width;
+                delete fig.layout.height;
+            }
             Plotly.newPlot(divId, fig.data, fig.layout);
         })
         .catch(error => {
