@@ -11,7 +11,8 @@
 <body>
     <main>
 
-    <h1>Persuasive or Deceptive Visualization</h1>
+    <h1>Persuasive (or Deceptive) Visualization</h1>
+    <h3>Author: Matthew Jacobsen</h3>
     <br>
     
     <h2>Background</h2>
@@ -61,36 +62,38 @@
     <ul>
         <li>
             <strong>Aggregating unsubstantiated and substantiated complaints: Score -1 Deceptive</strong>
-            <p>In this plot, I aggregate all unsubstantiated and substantiated complaints together and declare them "Not Exonerated" (shown in red). While
-                this is technically valid, it implies that in all these cases, officer misconduct was found. In reality the majority 
-                of the complaints in this aggregation (65%) are unsubstantiated. 
+            <p>
+                In this plot, I aggregate all unsubstantiated and substantiated complaints together and declare them "Not Exonerated"
+                (shown in red). While this is technically valid, it implies that in all these cases, officer misconduct was found. In
+                reality the majority of the complaints in this aggregation (65%) are unsubstantiated.
             </p>
         </li>
         <li>
             <strong>Using a hidden second y axis for "not exonerated" complaints: Score -2 Very Deceptive</strong>
             <p>
-                The blue bars and the left y-axis are cleary labeled "Total Compliants". The plot layout implies that the the number of "Not Exonerated"
-                complaints is overlaid in red bars using the same y-axis. However, there is a hidden second y-axis that scales the red bars to make them 
-                taller. This is a very deceptive technique, meant to give the reader the idea that only a very small percentage of complaints each year are
-                exonerated. The viewer can only discover this deception if they hover over the red bars and observe that the bar values don't match the left 
-                y-axis.
+                The blue bars and the left y-axis are clearly labeled "Total Complaints". The plot layout implies that the number of
+                "Not Exonerated" complaints is overlaid in red bars using the same y-axis. However, there is a hidden second y-axis that
+                scales the red bars to make them taller. This is a very deceptive technique, meant to give the reader the idea that only
+                a very small percentage of complaints each year are exonerated. The viewer can only discover this deception if they
+                hover over the red bars and observe that the bar values don't match the left y-axis.
             </p>
         </li>
         <li>
             <strong>Exaggerated language in the title and caption: Score -1 Deceptive</strong>
             <p>
-                The title uses the word "rarely" to descibe the proportion of complaints where officers are exonerated. The actual proportion is 26%,
-                therefore, using "rarely" exaggerates this fact. Similarly in the caption, I use the phrase "vast majority" to describe the 74% of 
-                cases where the officer is not exonerated. Both of these language choices reinforce the deception above. 
-
+                The title uses the word "rarely" to describe the proportion of complaints where officers are exonerated. The actual
+                proportion is 26%, therefore, using "rarely" exaggerates this fact. Similarly in the caption, I use the phrase "vast
+                majority" to describe the 74% of cases where the officer is not exonerated. Both of these language choices reinforce the
+                deception above.
             </p>
         </li>
         <li>
             <strong>Using partial data: Score -1 Deceptive</strong>
             <p>
-                The dataset includes data back to year 1985, however, I only used data after 1997. Due to the deceptive scaling of the red bars, 
-                the red bars are higher than the blue in years before 1997. Having several years where there appeared to be no complaints
-                where officers were exonerated was too unbelievable. It also made the "Total Complaints" bars less interperetable.
+                The dataset includes data back to year 1985, however, I only used data after 1997. Due to the deceptive scaling of the
+                red bars, the red bars are higher than the blue in years before 1997. Having several years where there appeared to be no
+                complaints where officers were exonerated was too unbelievable. It also made the "Total Complaints" bars less
+                interpretable.
             </p>
         </li>
 
@@ -106,45 +109,61 @@
     <ul>
         <li>
             <strong>Aggregating unsubstantiated and exonerated complaints: Score -1 Deceptive</strong>
-            <p>As in figure 1, I deceptively aggregated the data. This time, I combined unsubstantiated complaints and 
-                exonerated complaints and label them as "No Misconduct Found". While the characterization is true, it hides 
-                the fact that in most of these cases (62%), the review board couldn't determine if the alleged incident 
-                actually happened. 
+            <p>
+                As in figure 1, I deceptively aggregated the data. This time, I combined unsubstantiated complaints and exonerated
+                complaints and label them as "No Misconduct Found". While the characterization is true, it hides the fact that in most
+                of these cases (62%), the review board couldn't determine if the alleged incident happened.
             </p>
         </li>
         <li>
             <strong>Focusing on the number of complaints where no misconduct was found: Score 0 Neutral</strong>
-            <p>The purpose of the visualization is to show that officer misconduct is not a growing isue. The visualization
-                design diverts the
-                focus to complaints where the officer was not found of misconduct. It is somewhat of a diversion to avoid the
-                fact that there
-                are actually more complaints that result in misconduct offenses. However, it's representation of the data is
-                still valid, though
-                difficult to interpret.
+            <p>
+                The purpose of the visualization is to show that officer misconduct is not a growing issue. The visualization design
+                diverts the focus to complaints where the officer was not found of misconduct. It is somewhat of a diversion to avoid
+                the fact that there are more complaints that result in misconduct offenses. However, it's representation of the data is
+                still valid, though difficult to interpret.
             </p>
         </li>
         <li>
             <strong>Plotting both traces on same y-axis: Score -2 Very Deceptive</strong>
             <p>
-                The large number of cases where no misconduct was found (blue bars) stretches out the y-axis. The red bars are actaully 
-                the percent of cases where misconduct occurs, not the number. Since these mostly range from 15% - 35%, they are
-                extremely outweighed by the blue bars. To notice this deception, the viewer must first notice the % sign after the misconduct 
+                The large number of cases where no misconduct was found (blue bars) stretches out the y-axis. The red bars are the
+                percent of cases where misconduct occurs, not the number. Since these mostly range from 15% - 35%, they are extremely
+                outweighed by the blue bars. To notice this deception, the viewer must first notice the % sign after the misconduct
                 found trace in the legend. Then they must perform a significant cognitive lift to determine that in fact both traces are
-                scaled to the same axis, as this is not hinted anywhere. The red bar data is available on hoverover, and can be more easily 
-                viewed by turning off the blue trace in the legend.
+                scaled to the same axis, as this is not hinted anywhere. The red bar data is not available on hover-over and can only be
+                effectively viewed by turning off the blue trace in the legend.
             </p>
         </li>
         <li>
             <strong>Misleading and exaggerated language in the title and caption: Score -1 Deceptive</strong>
             <p>
-                The title implies that complaints where no misconduct are found are "false", which is misleading since some of the complaints
-                may have involved officer misconduct but it wasn't able to be determined by the review board. As in figure 1, the subtitle and
-                the caption use "rarely" and "vast majority" as exaggerations of the proportions they represent.
-        
+                The title implies that complaints where no misconduct are found are "false", which is misleading since some of the
+                complaints may have involved officer misconduct, but it wasn't able to be determined by the review board. As in figure
+                1, the subtitle and the caption use "rarely" and "vast majority" as exaggerations of the proportions they represent.
             </p>
         </li>
     </ul>
 
+    <br>
+    <h2>Reflection</h2>
+    <p>
+        After designing these visualizations, I found that there was a clear line between making deceptive and earnest
+        visualization decisions. Since my goal was to persuade, I intentionally made choices to show each side of the
+        proposition. I believe that if persuasion is the initial goal of the visualization, then there is a high likelihood for
+        such deceptive choices. Ethical visualizations should aim to showcase the data in a fair and interpretable manner. They
+        shouldn’t omit data, nor include noise that distracts from the subject. I would define unacceptable persuasive choices
+        as any choice the designer makes that over-emphasizes, exaggerates, downplays, or hides some part of the data to
+        persuade the viewer of their point.
+    </p>
+    <p>
+        The main deception in these visualizations is aggregating the unsubstantiated complaints with the substantiated
+        complaints and then again with the exonerated complaints. The potential for this type of deceptive aggregation is
+        possible whenever there is a large proportion of a “neutral” category. Combining the neutral category with another
+        category, then labeling it as the negation of the third category is logically sound, however, it can be deceptive if the
+        proportion of the neutral category isn’t explicitly stated. Therefore, I believe this type of aggregation a misleading
+        persuasive choice.
+    </p>
     </main>
 </body>
 </html>
