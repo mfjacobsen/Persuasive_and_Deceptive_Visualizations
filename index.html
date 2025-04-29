@@ -10,11 +10,141 @@
 </head>
 <body>
     <main>
+
     <h1>Persuasive or Deceptive Visualization</h1>
-    <h2>Figure 1</h2>
+    <br>
+    
+    <h2>Background</h2>
+    <p>
+        It is tempting to think of data and visualization as a neutral actor, with a single “correct” set of design choices that
+        “truthfully” report the data. However, outside of egregious errors (e.g., when dates are sorted incorrectly or the
+        y-axis is not scaled uniformly), we see that “ground truth” in data is much more contextual and situated. Design choices
+        we make give visualization a rhetorical power that influences what a reader concludes and remembers about the data, and
+        blurs the line between persuasion and deception. This project aims to demonstrate this concept by showcasing two visualizations 
+        made from the same dataset but on opposing sides of a proposal.
+    </p>
+    <p>
+        Design decisions will be discussed and scored on a diverging scale from -2 to 2, how deceptive or earnest the decision is (where -2 is fully deceptive, 0 is neutral, and
+        2 is fully earnest).
+    </p>
+
+    <h2>Data</h2>
+    <p>
+        The data for this project can be found here: 
+        <a href="https://www.propublica.org/datastore/dataset/civilian-complaints-against-new-york-city-police-officers">Civilian
+            Complaints Against New York City Police Officers</a>. This dataset was compiled by ProPublica, an independent, nonprofit 
+            investigative journalism newsroom. It contains more than 12,000 civilian complaints filed against the NYPD, with demographic 
+            information about the complainant and officer, the category of the alleged misconduct, and the result of the complaint.
+    </p>
+    <p>
+        We will focus on a specific feature of this dataset - <strong>Board Disposition</strong>: Each complaint in the dataset was investigated by NYPD and
+        the investigations results fall into one of three categories:
+        <ul>
+            <li><strong>Exonerated:</strong> (29%) - The alleged conduct occurred but did not violate NYPD’s rules</li>
+            <li><strong>Unsubstantiated:</strong> (46%) - The CCRB fully investigated but could not affirmatively conclude both that the conduct occurred and that it broke
+            the rules.</li>
+            <li><strong>Substantiated:</strong> (25%) - The alleged conduct occurred and it violated the rules.</li>
+        </ul>
+    </p>
+
+    <br>
+    <h2>Proposition: <strong> Police misconduct is a growing problem.</strong></h2>
+    <br>
+
+    <h2>Figure 1 - Argument for the proposition:</h2>
+
+    <br>
     <div id="plot1" class="plotly-figure"></div>
-    <h2>Figure 2</h2>
+    <br>
+
+    <h3>Design Decisions and Rationale:</h3>
+    <ul>
+        <li>
+            <strong>Aggregating unsubstantiated and substantiated complaints: Score -1 Deceptive</strong>
+            <p>In this plot, I aggregate all unsubstantiated and substantiated complaints together and declare them "Not Exonerated" (shown in red). While
+                this is technically valid, it implies that in all these cases, officer misconduct was found. In reality the majority 
+                of the complaints in this aggregation (65%) are unsubstantiated. 
+            </p>
+        </li>
+        <li>
+            <strong>Using a hidden second y axis for "not exonerated" complaints: Score -2 Very Deceptive</strong>
+            <p>
+                The blue bars and the left y-axis are cleary labeled "Total Compliants". The plot layout implies that the the number of "Not Exonerated"
+                complaints is overlaid in red bars using the same y-axis. However, there is a hidden second y-axis that scales the red bars to make them 
+                taller. This is a very deceptive technique, meant to give the reader the idea that only a very small percentage of complaints each year are
+                exonerated. The viewer can only discover this deception if they hover over the red bars and observe that the bar values don't match the left 
+                y-axis.
+            </p>
+        </li>
+        <li>
+            <strong>Exaggerated language in the title and caption: Score -1 Deceptive</strong>
+            <p>
+                The title uses the word "rarely" to descibe the proportion of complaints where officers are exonerated. The actual proportion is 26%,
+                therefore, using "rarely" exaggerates this fact. Similarly in the caption, I use the phrase "vast majority" to describe the 74% of 
+                cases where the officer is not exonerated. Both of these language choices reinforce the deception above. 
+
+            </p>
+        </li>
+        <li>
+            <strong>Using partial data: Score -1 Deceptive</strong>
+            <p>
+                The dataset includes data back to year 1985, however, I only used data after 1997. Due to the deceptive scaling of the red bars, 
+                the red bars are higher than the blue in years before 1997. Having several years where there appeared to be no complaints
+                where officers were exonerated was too unbelievable. It also made the "Total Complaints" bars less interperetable.
+            </p>
+        </li>
+
+    </ul>
+    <br>
+
+    <h2>Figure 2 - Argument against the proposition:</h2>
+    <br>
     <div id="plot2" class="plotly-figure"></div>
+
+    <br>
+    <h3>Design Decisions and Rationale:</h3>
+    <ul>
+        <li>
+            <strong>Aggregating unsubstantiated and exonerated complaints: Score -1 Deceptive</strong>
+            <p>As in figure 1, I deceptively aggregated the data. This time, I combined unsubstantiated complaints and 
+                exonerated complaints and label them as "No Misconduct Found". While the characterization is true, it hides 
+                the fact that in most of these cases (62%), the review board couldn't determine if the alleged incident 
+                actually happened. 
+            </p>
+        </li>
+        <li>
+            <strong>Focusing on the number of complaints where no misconduct was found: Score 0 Neutral</strong>
+            <p>The purpose of the visualization is to show that officer misconduct is not a growing isue. The visualization
+                design diverts the
+                focus to complaints where the officer was not found of misconduct. It is somewhat of a diversion to avoid the
+                fact that there
+                are actually more complaints that result in misconduct offenses. However, it's representation of the data is
+                still valid, though
+                difficult to interpret.
+            </p>
+        </li>
+        <li>
+            <strong>Plotting both traces on same y-axis: Score -2 Very Deceptive</strong>
+            <p>
+                The large number of cases where no misconduct was found (blue bars) stretches out the y-axis. The red bars are actaully 
+                the percent of cases where misconduct occurs, not the number. Since these mostly range from 15% - 35%, they are
+                extremely outweighed by the blue bars. To notice this deception, the viewer must first notice the % sign after the misconduct 
+                found trace in the legend. Then they must perform a significant cognitive lift to determine that in fact both traces are
+                scaled to the same axis, as this is not hinted anywhere. The red bar data is available on hoverover, and can be more easily 
+                viewed by turning off the blue trace in the legend.
+            </p>
+        </li>
+        <li>
+            <strong>Misleading and exaggerated language in the title and caption: Score -1 Deceptive</strong>
+            <p>
+                The title implies that complaints where no misconduct are found are "false", which is misleading since some of the complaints
+                may have involved officer misconduct but it wasn't able to be determined by the review board. As in figure 1, the subtitle and
+                the caption use "rarely" and "vast majority" as exaggerations of the proportions they represent.
+        
+            </p>
+        </li>
+    </ul>
+
     </main>
 </body>
 </html>
